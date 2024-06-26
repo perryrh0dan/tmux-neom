@@ -48,7 +48,7 @@ main()
   yellow='#f1fa8c'
 
   neo_zero='#82aaff'
-  neo_one='#fb1aa1'
+  neo_one='#c099ff'
   neo_two='#f14287'
   neo_three='#fe7481'
   neo_four='#fdad75'
