@@ -132,10 +132,10 @@ main()
 
   # Status left
   if $show_powerline; then
-    tmux set-option -g status-left "#[bg=${neo_zero},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon} #[fg=${neo_zero},bg=${gray}]#{?client_prefix,#[fg=${yellow}],}${left_sep}"
+    tmux set-option -g status-left "#[bg=${neo_zero},fg=${dark_gray}]#{?client_prefix,#[bg=${neo_five}],} ${left_icon} #[fg=${neo_zero},bg=${gray}]#{?client_prefix,#[fg=${neo_five}],}${left_sep}"
     powerbg=${gray}
   else
-    tmux set-option -g status-left "#[bg=${neo_zero},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
+    tmux set-option -g status-left "#[bg=${neo_zero},fg=${dark_gray}]#{?client_prefix,#[bg=${neo_five}],} ${left_icon}"
   fi
 
   # Status right
