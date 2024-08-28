@@ -25,7 +25,6 @@ main()
   show_timezone=$(get_tmux_option "@neom-show-timezone" true)
   show_left_sep=$(get_tmux_option "@neom-show-left-sep" )
   show_right_sep=$(get_tmux_option "@neom-show-right-sep" )
-  show_border_contrast=$(get_tmux_option "@neom-border-contrast" false)
   show_day_month=$(get_tmux_option "@neom-day-month" false)
   show_refresh=$(get_tmux_option "@neom-refresh-rate" 5)
   show_synchronize_panes_label=$(get_tmux_option "@neom-synchronize-panes-label" "Sync")
@@ -117,11 +116,7 @@ main()
   tmux set-option -g status-right-length 100
 
   # pane border styling
-  if $show_border_contrast; then
-    tmux set-option -g pane-active-border-style "fg=${light_purple}"
-  else
-    tmux set-option -g pane-active-border-style "fg=${dark_purple}"
-  fi
+  tmux set-option -g pane-active-border-style "fg=#86e1fc"
   tmux set-option -g pane-border-style "fg=${gray}"
 
   # message styling
