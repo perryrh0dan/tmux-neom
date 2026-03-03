@@ -20,11 +20,13 @@ main()
 
   if [ "$(expr ${TIME_LAST} + ${RUN_EACH})" -lt "${TIME_NOW}" ]; then
     # Run weather script here
-    $current_dir/weather.sh $fahrenheit $location "$fixedlocation" > "${DATAFILE}"
+    "$current_dir/weather.sh" "$fahrenheit" "$location" "$fixedlocation" > "${DATAFILE}" 2>/dev/null || true
     echo "${TIME_NOW}" > "${LAST_EXEC_FILE}"
   fi
 
-  cat "${DATAFILE}"
+  if [ -r "${DATAFILE}" ]; then
+    cat "${DATAFILE}"
+  fi
 }
 
 #run main driver function
