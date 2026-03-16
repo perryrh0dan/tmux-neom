@@ -154,6 +154,11 @@ main()
       tmux set-option -g status-right-length 250
       script="#($current_dir/cwd.sh)"
 
+    elif [ $plugin = "git-root" ]; then
+      IFS=' ' read -r -a colors  <<< $(get_tmux_option "@neom-cwd-colors" "dark_gray white")
+      tmux set-option -g status-right-length 250
+      script="#($current_dir/git_root.sh)"
+
     elif [ $plugin = "fossil" ]; then
       IFS=' ' read -r -a colors  <<< $(get_tmux_option "@neom-fossil-colors" "green dark_gray")
       tmux set-option -g status-right-length 250
